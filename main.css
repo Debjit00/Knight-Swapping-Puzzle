@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+h1 {
+    margin-bottom: 20px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+.boards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+.board-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.board-label {
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+.board {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(4, 80px);
+    gap: 2px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 5px;
+}
+.cell {
+    width: 80px;
+    height: 80px;
+    background-color: #555;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    cursor: pointer;
+    position: relative;
+}
+.hidden {
+    visibility: hidden;
+}
+.selected {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #45a049;
+}
+.moves-counter {
+    margin-top: 10px;
+    font-size: 18px;
+}
+.success-message {
+    color: #4CAF50;
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+    display: none;
+}
+.knight-white {
+    color: white;
+}
+.knight-black {
+    color: #000000;
+}
+#success-message {
+    display: none;
+    font-size: 18px;
+    color: green;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.cell span {
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: element; /* More specific dragging behavior */
+    position: relative; /* Helps with z-index during dragging */
+    z-index: 10;
+    pointer-events: auto; /* Ensures the knight captures events */
+}
+
+.dragging {
+    opacity: 0.5;
+}
+
+.valid-move {
+    background-color: rgba(0, 255, 0, 0.3);
+    cursor: pointer;
+}
+
+.knight-white, .knight-black {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+}
